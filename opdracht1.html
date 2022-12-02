@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        // 1 functionele doelstelling (klantvraag)
+            // concreet: Ik zie op het scherm, ik klik, ik doe. Niet technisch
+                //  Als je het kan opknippen moet je het opknippen!
+        // 2 technische strategie (technisch overleg)
+            // Technisch 
+            // Verander nooit je functionele doelstelling
+        // 3 coderen (typen)
+
+        function start(){
+            //console.log("yes");
+            //document.getElementById("goedkeuringsdiv").innerHTML = "yes";
+            let leeftijd = document.getElementById("magdrinken").value;
+            if (leeftijd < 16){
+                console.log("mag niet drinken");
+                document.getElementById("goedkeuringsdiv").innerHTML = "mag niet drinken";
+                document.getElementById("goedkeuringsdiv").style.backgroundColor = "red";
+            }
+            else if (leeftijd >= 16 && leeftijd < 18 ){
+                document.getElementById("goedkeuringsdiv").innerHTML = "mag alleen bier";
+                document.getElementById("goedkeuringsdiv").style.backgroundColor = "yellow";
+            }
+            else{
+                document.getElementById("goedkeuringsdiv").innerHTML = "mag wel drinken";
+                document.getElementById("goedkeuringsdiv").style.backgroundColor = "green";
+            }
+            
+        
+        }
+
+    </script>
+</head>
+<body>
+   <textarea id ="magdrinken"></textarea> 
+   <br>
+   <button onclick = "start()">Check</button>
+   <div id = "goedkeuringsdiv"></div>
+</body>
+</html>

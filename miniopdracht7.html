@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            margin: 5px;
+        }
+
+        .blokje{
+            display: inline-block;
+            width: 80 px;
+            height: 80 px;
+            background-color: blue;
+        }
+
+        .blokjefout{
+            display: inline-block;
+            width: 80 px;
+            height: 80 px;
+            background-color: red;   
+        }
+
+        
+        .blokjegoed{
+            display: inline-block;
+            width: 80 px;
+            height: 80 px;
+            background-color: green;   
+        }
+    </style>
+    <script>
+        let antwoord = "fiets";
+        function controleren(){
+            controleArray = Array(antwoord.length);
+            let invoerwoord = document.getElementById("invoer").value;
+            console.log(invoerwoord);
+            for (var x = 0; x < antwoord.length; x++){
+                let letter = invoerwoord[x];
+                console.log(letter);
+                if (letter == antwoord[x]){
+                    controleArray[x] = 2;
+                }
+                else if (antwoord.includes(letter)){
+                    controleArray[x] = 1;
+                }
+                else {
+                    controleArray[x] = 0;
+                }
+            }
+            console.log(controleArray)
+        }
+
+    </script>
+</head>
+<body>
+    <textarea id = "invoer"></textarea>
+    <button onclick = "controleren()">Controleren</button>
+    <div class = "blokje"></div>
+</body>
+</html>
+

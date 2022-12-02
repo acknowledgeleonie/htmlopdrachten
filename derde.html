@@ -1,0 +1,38 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    
+    <script>
+        function start(){ // eventlistener
+            console.log("beginnen"); // geeft in de developer opties wel "beginnen", maar geen popup
+            let naam = document.getElementById("voornaam").value; // html pagina noemt zichzelf document. zoek binnen document naar element (op id) genaamd voornaam, en gebruik dan de value
+            console.log(naam);
+            document.getElementById("resultaat").innerHTML = "Welkom "+naam;
+            // if statement 
+            if (naam == "Leonie"){ // boolean 
+                console.log("Dit wil ik alleen doen als het waar is")
+            }
+            for (var x = 0; x <= 10 ; x = x + 2){
+                document.getElementById("resultaat").innerHTML += "<hr>"+x; // nieuwe inner html wordt ook string dus je kan ook tags gebruiken 
+            }
+            var lijstje = [5, 23, 77, 99, 17]
+            alert(lijstje[2]);
+            for (var y = 0; y < lijstje.length; y++){
+                console.log(lijstje[y]);
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <input id="voornaam"><button onclick="start()">klik hier</button>
+    <div id="resultaat"></div> 
+</body>
+</html>
