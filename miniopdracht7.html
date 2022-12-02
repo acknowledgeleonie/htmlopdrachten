@@ -33,7 +33,8 @@
         }
     </style>
     <script>
-        let antwoord = "fiets";
+        let antwoord = "fietsje";
+       // window.onload = toonStreepjes;
         function controleren(){
             controleArray = Array(antwoord.length);
             let invoerwoord = document.getElementById("invoer").value;
@@ -43,6 +44,7 @@
                 console.log(letter);
                 if (letter == antwoord[x]){
                     controleArray[x] = 2;
+                    document.getElementById("spelbord").innerHTML.style = "red";
                 }
                 else if (antwoord.includes(letter)){
                     controleArray[x] = 1;
@@ -52,13 +54,21 @@
                 }
             }
             console.log(controleArray)
+            toonStreepjes();
         }
+        function toonStreepjes(){
+          for(var x = 0; x < antwoord.length; x++){
+            document.getElementById("spelbord").innerHTML += " _ "
+          }  
+        }
+        
 
     </script>
 </head>
-<body>
+<body onload="toonStreepjes()">
     <textarea id = "invoer"></textarea>
     <button onclick = "controleren()">Controleren</button>
+    <div id="spelbord"></div>
     <div class = "blokje"></div>
 </body>
 </html>
